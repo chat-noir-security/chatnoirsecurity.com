@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="sup">
+    <title>Chat Noir Security</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    
+
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <style>
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" data-nav="main" href="#">Home</a>
+          <a class="nav-link d-none" data-nav="research" href="#">Research</a>
+          <a class="nav-link" data-nav="about" href="#">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" id="main" class="inner cover">
+      <img src="yinyang.png" />
+      <h1 class="cover-heading">Chat Noir Security</h1>
+      <p class="lead">"Pretending we're a real organization since about three days ago."</p>
+      <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+      </p>
+    </main>
+
+  <article id="research" class="d-none inner cover">
+    <h1>idk what goes here</h1>
+    <p>Coming soon...</p>
+  </article>
+
+  <article id="about" class="d-none inner cover">
+    <p>Chat Noir Security was founded in 2018 and specializes in financial crime research and user security.</p>
+    <p>To inquire about services, please contact us at info@chatnoirsecurity.com</p>
+  </article>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>
+        <!-- icons courtesy of Font Awesome https://fontawesome.com/license -->
+          <img src="twitter.svg" alt="Twitter"/>
+          <img src="github.svg" alt="Github" />
+          <img src="cat.svg" alt="Cat pictures" />
+      </p>
+    </div>
+  </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+<script>
+  // Y'ALL READY FOR SOME JQUERY JANK?? *airhorn*
+
+  $('a.nav-link').click(function(){
+    var nav = $(this).data("nav");
+    $('a.nav-link').removeClass("active");
+    $(this).addClass("active");
+
+    $(".inner.cover").addClass("d-none");
+    $('#' + nav).removeClass("d-none");
+  });
+
+  $(".btn-secondary").click(function(){
+    $('a.nav-link').removeClass("active");
+    $("nav a[data-nav='about']").addClass("active");
+    $(".inner.cover").addClass("d-none");
+    $("#about").removeClass("d-none");
+  });
+
+</script>
+
+</body>
+</html>
